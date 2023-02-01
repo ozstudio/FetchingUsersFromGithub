@@ -17,6 +17,7 @@ const UserInfo = () => {
 
   },
 {
+  id:2,
   icon:<FiUsers className='icon'/>,
   label:'followers',
   value:followers,
@@ -40,12 +41,12 @@ const UserInfo = () => {
 ]
   return <section className='section'>
     <Wrapper className='section-center'>
-      {items.map(item =>{
+      {items.map((item) =>{
         return <Item key ={item.id} {...item}></Item>
       })}
 
     </Wrapper>
-  </section>;
+  </section>; 
 };
 
 const Item =({icon,label,value,color}) =>{
