@@ -9,15 +9,19 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //dev-0gmdagqky4jxpvhs.us.auth0.com
 //RPFsdJeUsUn068Ii7fu9qdpBy0qFqph3
 
+const providerConfig = {
+  domain: "dev-0gmdagqky4jxpvhs.us.auth0.com",
+  clientId: "RPFsdJeUsUn068Ii7fu9qdpBy0qFqph3",
+  cacheLocation:'localstorage',
+  authorizationParams: {
+    redirect_uri: window.location.origin
+  },
+};
 
 root.render(
   <React.StrictMode>
-    <Auth0Provider
-      domain="dev-0gmdagqky4jxpvhs.us.auth0.com"
-      clientId="RPFsdJeUsUn068Ii7fu9qdpBy0qFqph3"
-      authorizationParams={{
-        redirect_uri: window.location.origin
-      }}>
+    <Auth0Provider {...providerConfig}
+    >
     <GithubProvider>
     <App />
     </GithubProvider>

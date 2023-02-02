@@ -4,11 +4,14 @@ import styled from 'styled-components';
 import loginImg from '../images/login-img.svg';
 import { Link } from 'react-router-dom';
 const Login = () => {
+
+  const {loginWithRedirect} = useAuth0();
+
   return <Wrapper>
     <img src={loginImg} alt = "user image"></img>
     <h1>Github user</h1>
-    <Link to ="" className='btn'>login</Link>
-
+    {/* <Link to ="" className='btn'>login</Link> */}
+<button className='btn' onClick ={loginWithRedirect}>Login</button>
   </Wrapper>;
 };
 const Wrapper = styled.section`
